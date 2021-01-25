@@ -101,4 +101,17 @@ vowelRegex = re.compile(r'[^aeiouAEIOU]')
 mo = vowelRegex.findall('RoboCop eats baby food. BABY FOOD.')
 print(mo)
 
-# caret ^ and dollar sign $
+# begins/end with - caret ^ and dollar sign $
+beginsWithHello = re.compile(r'^Hello')
+mo = beginsWithHello.search('Hello, world!')
+print(mo.group())
+
+mo = beginsWithHello.search('Hi there and Hello!')
+print(mo == None)
+
+endsWithNumber = re.compile(r'\d$')
+mo = endsWithNumber.search('Your number is 42')
+print(mo.group())
+
+mo = endsWithNumber.search('Your number is forty two.')
+print(mo == None)
